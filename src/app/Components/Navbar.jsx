@@ -12,8 +12,8 @@ const Navbar = () => {
         <Link href={'/'}> <div className='font-bold text-xl sm:text-2xl '>Lyncnest</div></Link>
         <div className='gap-6 flex'>
           <Link href={'/templates'}><div className='sm:flex hidden text-gray-500 hover:bg-gray-100 p-1 rounded-lg'>Templates</div></Link>
-          <Link href={'/discover'}><div className='sm:flex hidden text-gray-500 hover:bg-gray-100 p-1 rounded-lg'>Discover</div></Link>
-          <Link href={'/workspace'}><div className='sm:flex hidden text-gray-500 hover:bg-gray-100 p-1 rounded-lg'>Workspace</div></Link>
+          {/* <Link href={'/discover'}><div className='sm:flex hidden text-gray-500 hover:bg-gray-100 p-1 rounded-lg'>Discover</div></Link>
+          <Link href={'/workspace'}><div className='sm:flex hidden text-gray-500 hover:bg-gray-100 p-1 rounded-lg'>Workspace</div></Link> */}
         </div>
         <div className='flex items-center gap-2'>
 
