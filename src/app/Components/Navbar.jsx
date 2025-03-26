@@ -31,10 +31,10 @@ const Navbar = () => {
       <div className=' flex flex-col gap-4 items-start p-6 text-lg'>
         <Link href={'/templates'}><div className='flex font-semibold text-gray-600 hover:bg-gray-100 p-1 rounded-lg hover:underline'  onClick={() => setMenuOpen(false)}>Templates</div></Link>
         <div className='border w-full border-gray-300'></div>
-        <Link href={'/discover'}><div className='flex font-semibold text-gray-600 hover:bg-gray-100 p-1 rounded-lg hover:underline' onClick={() => setMenuOpen(false)}>Discover</div></Link>
+        {/* <Link href={'/discover'}><div className='flex font-semibold text-gray-600 hover:bg-gray-100 p-1 rounded-lg hover:underline' onClick={() => setMenuOpen(false)}>Discover</div></Link>
         <div className='border w-full border-gray-300'></div>
 
-        <Link href={'/workspace'}><div className='flex font-semibold text-gray-600 hover:bg-gray-100 p-1 rounded-lg hover:underline' onClick={() => setMenuOpen(false)}>Workspace</div></Link>
+        <Link href={'/workspace'}><div className='flex font-semibold text-gray-600 hover:bg-gray-100 p-1 rounded-lg hover:underline' onClick={() => setMenuOpen(false)}>Workspace</div></Link> */}
 
       </div>
       </div>
