@@ -145,6 +145,14 @@ const Global = ({update}) => {
           console.log(error)
         })
     }, [params,update])
+
+    const handleURL=(url)=>{
+      if(!url.startsWith('https') || !url.startsWith('http')){
+        return `https://${url}`
+      }
+      return url
+    }
+
     if(error) return <PageNotfound/>
     return (
       <div style={{ background: template.bgImage ? `url(${template.bgImage}) center/cover no-repeat` : template.bgColor, color: template.text 
@@ -162,7 +170,7 @@ const Global = ({update}) => {
           {
             data?.socialMediaLinks?.map((eachSocialMediaLink,index)=>{
               return <div key={index}>
-                <a href={eachSocialMediaLink?.url} target='_blank'>
+                <a href={handleURL(eachSocialMediaLink?.url)} target='_blank'>
                 <img src={eachSocialMediaLink?.logo} alt="" className='h-6 w-6' />
 
                 </a>
@@ -173,7 +181,7 @@ const Global = ({update}) => {
         <div className='w-full mt-4 flex flex-col items-center'>
 
         {data?.links.map((link, index) => (
-          <a key={index} href={`${link.url}`} style={{backgroundColor:template.linkbg}} className=" flex relative border border-2 hover:bg-transparent! justify-center w-full my-1 cursor-pointer items-center text-[15px]  p-4 font-semibold max-w-sm rounded-lg  duration-300 ease-in-out" target="_blank">
+          <a key={index} href={handleURL(link.url)} style={{backgroundColor:template.linkbg}} className=" flex relative border border-2 hover:bg-transparent! justify-center w-full my-1 cursor-pointer items-center text-[15px]  p-4 font-semibold max-w-sm rounded-lg  duration-300 ease-in-out" target="_blank">
             <div className='absolute left-4 '><img src={link?.logo} alt=""  className='h-8 '/></div>
             <div style={{ color: template.linktext }}>{link.name}</div>
 

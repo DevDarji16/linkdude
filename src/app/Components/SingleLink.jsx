@@ -22,7 +22,7 @@ const SingleLink = (props) => {
             transition,
           };
           const formatURL = (url) => {
-            if (!url.startsWith("http://") && !url.startsWith("https://")) {
+            if (!url.startsWith("http://") || !url.startsWith("https://")) {
               return `https://${url}`;
             }
             return url;
