@@ -12,7 +12,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata={
-  title:'LyncNest'
+  title:'LyncNest',
+  description: "Create and manage beautiful link-in-bio pages with Lyncnest.",
+  other: {
+    "google-site-verification": "JfU8igH1zHErnM1AZvwKvXb9RdduaneLT38zZiSLO9o",
+  }
 }
 
 
