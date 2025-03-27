@@ -50,6 +50,9 @@ const SpaceLink = () => {
         fetch('https://lyncnest-a5aq.onrender.com/auth/currentUser', { cache: 'no-cache', credentials: 'include' })
             .then(response => response.json())
             .then(data => {
+                if(data?.message){
+                    setError(true)
+                }
                 console.log('userdata real', data)
                 setUserData(data)
                 setUserDetails({ username: data.username, name: data.profileName, profile: data.profile,profileFile:data.profile })
@@ -256,10 +259,10 @@ const SpaceLink = () => {
                     
 
                 </div>
-                <div className='h-screen w-full  sm:p-8 p-3 sm:ml-[20%]  '  onClick={() => { setSettings(false);setMenuOpen(!menuOpen) }}>
+                <div className='h-screen w-full  sm:p-8 p-3 sm:ml-[20%]  '  onClick={() => { setSettings(false);setMenuOpen(false) }}>
                     <div>
                         <div className=''>
-                            <div className={`${theme === 'light' ? 'text-white' : 'text-black'} sm:hidden font-bold text-3xl fixed `} onClick={() => { setMenuOpen(!menuOpen) }}><IoIosMenu /></div>
+                            <div className={`${theme === 'light' ? 'text-white' : 'text-black'} sm:hidden font-bold text-3xl fixed `} onClick={(e) => {e.stopPropagation(); setMenuOpen(!menuOpen) }}><IoIosMenu /></div>
                             <div className={`text-center text-xl mb-4  ${theme === 'dark' ? ' text-black' : ' text-gray-100'}font-semibold`}>
                                 Workspace
                             </div>
