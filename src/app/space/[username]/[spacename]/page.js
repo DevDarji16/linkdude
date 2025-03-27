@@ -99,7 +99,6 @@ const SpaceLink = () => {
                     setError(true)
                 }
                 else {
-
                     console.log('Links', data)
                     setLinkContainer(data.links)
                     setSocialContainer(data.socialMediaLinks)

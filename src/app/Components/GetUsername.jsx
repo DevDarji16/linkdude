@@ -54,7 +54,7 @@ const GetUsername = () => {
       </Link>
       <div className={`flex flex-col space-y-6 justify-center items-center px-2 h-screen ${theme === 'dark' ? 'bg-[#F3F3F1] text-black' : 'bg-[#181b1e] text-white'}`}>
         <div className='font-bold text-2xl sm:text-4xl text-center'>Don’t let your important links get lost<br />—nest them today!</div>
-        <div className='bg-[#BEFD50] space-y-3  rounded-lg p-4'>
+        <div className='bg-green-400 space-y-3  rounded-lg p-4'>
           <div className={`font-bold text-2xl sm:text-2xl text-center ${theme==='light'?'text-black ':'text-white'}`}>Just one more step <br /> to get started!</div>
           <div className='flex justify-center'>
 
