@@ -21,6 +21,12 @@ const SingleLink = (props) => {
             transform: CSS.Transform.toString(transform),
             transition,
           };
+          const formatURL = (url) => {
+            if (!url.startsWith("http://") && !url.startsWith("https://")) {
+              return `https://${url}`;
+            }
+            return url;
+          };
   return (
     <div ref={setNodeRef} style={style} className={`${theme==='light'?'bg-[#363d44]':'bg-white'} p-3 flex items-center gap-5 justify-between  rounded-xl `}>
                 <div className='w-full'>
@@ -28,7 +34,7 @@ const SingleLink = (props) => {
                   <div className='text-gray-500 text-[14px] max-w-[230px] sm:max-w-[500px] truncate'>{props.url}</div>
                   <div className='flex mt-4 justify-between'>
                     <div>
-                     <a href={props.url} target='_blank'><MdArrowOutward size={20} className='inline-block cursor-pointer' /></a> 
+                     <a href={formatURL(props.url)} target='_blank'><MdArrowOutward size={20} className='inline-block cursor-pointer' /></a> 
                     </div>
                     <div><RiDeleteBin5Line onClick={() => { props.setDeleteMenu(!props.deleteMenu);props.setDeleteID(props.id) }} className='text-red-500 cursor-pointer' /></div>
                   </div>
