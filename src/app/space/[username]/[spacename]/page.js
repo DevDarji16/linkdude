@@ -95,7 +95,7 @@ const SpaceLink = () => {
         })
             .then(response => response.json())
             .then(data => {
-                if (data?.Error) {
+                if (data?.error) {
                     setError(true)
                 }
                 else {
