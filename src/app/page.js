@@ -18,12 +18,11 @@ export default  function Home() {
     async function checkLoggedIn(){
       const res=await fetch('https://lyncnest-a5aq.onrender.com/auth/check',{cache:'no-cache',credentials:'include'})
       const data=await res.json()
-      const newres=await fetch('https://lyncnest-a5aq.onrender.com/auth/currentUser', { credentials: 'include' })
-      const data2=await newres.json()
-      console.log(data)
-      console.log(data2)
+      
       if(data.isLoggedIn ){
-        if(data2.username.length>0){
+        const newres=await fetch('https://lyncnest-a5aq.onrender.com/auth/currentUser', { credentials: 'include' })
+        const data2=await newres.json()
+        if(data2.username?.length>0){
 
           router.replace('/workspace')
         }
