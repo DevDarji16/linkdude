@@ -82,22 +82,22 @@ const Homepage = () => {
           <div className="max-w-6xl mx-auto px-6 text-center relative flex flex-col items-center ">
 
             <motion.div
-              className="absolute right-1/2 top-[-30px] h-24 w-48 rounded-full bg-red-400 blur-[20px] "
+              className="absolute right-1/2 top-[-30px] h-24 w-48 rounded-full bg-green-400 blur-[20px] "
               animate={{ y: [0, -10, 0], x: [0, -15, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             />
             <motion.div
-              className="absolute left-1/2 top-[-30px] h-24 w-48 rounded-full bg-red-400 blur-[20px] "
+              className="absolute left-1/2 top-[-30px] h-24 w-48 rounded-full bg-green-400 blur-[20px] "
               animate={{ y: [0, -10, 0], x: [0, -10, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             />
             <motion.div
-              className="absolute left-1/2 top-[-30px] h-24 w-24 rounded-full bg-red-400 blur-[20px] "
+              className="absolute left-1/2 top-[-30px] h-24 w-24 rounded-full bg-green-400 blur-[20px] "
               animate={{ y: [0, -20, 0], x: [0, -20, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             />
             <motion.div
-              className="absolute right-1/2 top-[-30px] h-24 w-24 rounded-full bg-red-400 blur-[20px] "
+              className="absolute right-1/2 top-[-30px] h-24 w-24 rounded-full bg-green-400 blur-[20px] "
               animate={{ y: [0, -20, 0], x: [0, -20, 0] }}
               transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
             />

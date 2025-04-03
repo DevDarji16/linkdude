@@ -411,7 +411,7 @@ const UserLinks = (params) => {
             <div>@{params.userData?.username}</div>
             <div className='text-[14px] text-gray-500 my-1 ml-1'>{params?.bio}</div>
             <div className={`${theme==='light'?'text-gray-400':'text-gray-600'} hover:underline text-[13px] cursor-pointer flex`} onClick={()=>setBioCLick(!bioClick)}><MdOutlineEdit size={18}/>Add/Update bio</div>
-            <div className='flex gap-5 flex-wrap my-5 '>
+            <div className='flex gap-5 flex-wrap my-5'>
               
               {
                 params.socialContainer.map((eachSocialMediaLink,index)=>{
