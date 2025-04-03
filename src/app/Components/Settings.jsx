@@ -27,7 +27,7 @@ const Settings = ({ settings,name, url,username, setSettings }) => {
             <div className={`${settings ? 'opacity-100' : 'opacity-0 pointer-events-none'} w-46   duration-300 transition-all ease-in-out rounded-lg flex flex-col ${theme === 'light' ? 'bg-[#181b1e] text-white' : 'bg-gray-100'} items-center absolute bottom-14 left-3  shadow-lg border p-2`}>
                 <div className='text-[13px] '>Settings</div>
                 <div className={`${theme==='light'?'border-gray-700':'border-gray-300'} border  w-full my-2`}></div>
-                <div className='w-full flex justify-center'> <img src={url} className='rounded-full h-12 w-12' alt="" />
+                <div className='w-full flex justify-center'> <img src={url} className='rounded-full object-fit h-12 w-12' alt="" />
                 </div>
                 <div className='font-semibold text-[14px]'>@{username}</div>
                 <div className='text-[15px]'>{name}</div>
