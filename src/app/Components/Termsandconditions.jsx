@@ -9,6 +9,8 @@ const Termsandconditions = () => {
   const { theme } = useContext(ThemeContext);
 
   return (
+    <div>
+
     <div className={`${theme === 'dark' ? 'bg-[#F8F8F8] text-gray-900' : 'bg-black text-[#F8F8F8]'} w-screen min-h-screen flex flex-col items-center overflow-x-hidden`}>
       <Navbar />
       
@@ -58,6 +60,7 @@ const Termsandconditions = () => {
         <h2 className="text-2xl font-semibold mt-6">    Contact Us</h2>
         <p>If you have any questions about these Terms and Conditions, please contact us at <Link href="/contactus" className='text-blue-400 underline'>Contact us</Link>.</p>
       </div>
+    </div>
       <Footer/>
     </div>
   );
