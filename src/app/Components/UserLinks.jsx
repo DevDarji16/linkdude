@@ -406,7 +406,7 @@ const UserLinks = (params) => {
 
         <div className='flex gap-2 items-center'>
 
-          <img src={params.userData?.profile} width={70} height={70} className='rounded-full objext-cover w-[70px] h-[70px]' />
+          <img src={params.userData?.profile} width={70} height={70} className='rounded-full object-cover w-[70px] h-[70px]' />
           <div className='font-semibold'>
             <div>@{params.userData?.username}</div>
             <div className='text-[14px] text-gray-500 my-1 ml-1'>{params?.bio}</div>
