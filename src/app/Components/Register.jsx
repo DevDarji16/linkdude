@@ -6,11 +6,13 @@ import { useContext } from "react";
 import { ThemeContext } from "@/context/ThemeContext";
 import Link from 'next/link';
 import { MdLightMode, MdOutlineDarkMode } from 'react-icons/md';
+import MeteorsBackground from './MeteorCanvas';
 const Register = () => {
     const {theme,toggleTheme}=useContext(ThemeContext)
 
   return (
     <div>
+      <MeteorsBackground/>
                     <div className='absolute top-4 right-6 sm:top-11 sm:right-20 cursor-pointer' onClick={toggleTheme}>{theme === 'light' ? <MdOutlineDarkMode size={27} className='text-white' /> : <MdLightMode size={27} />}</div>
         
       <div className={`${theme === 'dark' ? 'bg-[#F3F3F1] text-black' : 'bg-[#181b1e] text-white'}  h-screen  `}>
@@ -23,7 +25,7 @@ const Register = () => {
 
         <div className='flex  justify-center items-center min-h-screen p-3'>
 
-          <div className={` shadow-lg ${theme==='light'?'text-white bg-gray-800':'text-black bg-white'}   p-6 sm:max-w-2xl rounded-lg `}>
+          <div className={` shadow-lg ${theme==='light'?'text-white bg-gray-800':'text-black bg-white'} z-10   p-6 sm:max-w-2xl rounded-lg `}>
             <div className='space-y-2'>
               <div className='font-extrabold text-2xl sm:text-4xl text-center'>Start with Lyncnest</div>
               <div className='text-gray-500 text-[15px] text-center'>Sign up for free!</div>
