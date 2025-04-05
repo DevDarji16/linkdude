@@ -4,7 +4,7 @@ export const LoggedIn=createContext()
 
   
 export const CheckLogin=({children})=>{
-    const [loggedInData,setLoggedInData]=useState()
+    const [loggedInData,setLoggedInData]=useState(false)
     useEffect(() => {
         async function checkLoggedIn() {
           try {
@@ -24,7 +24,7 @@ export const CheckLogin=({children})=>{
     
       
       return (
-        <LoggedIn.Provider value={{ loggedInData }}>
+        <LoggedIn.Provider value={{ loggedInData,setLoggedInData }}>
           {children} 
         </LoggedIn.Provider>
       );

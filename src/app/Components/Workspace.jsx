@@ -1,7 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+
 import { IoIosMenu } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
 
@@ -11,6 +10,7 @@ import Templates from './Templates';
 import Settings from './Settings';
 import { useContext } from "react";
 import { ThemeContext } from "@/context/ThemeContext";
+
 import { MdLightMode, MdOutlineDarkMode } from "react-icons/md";
 const Workspace = () => {
     const {theme,toggleTheme}=useContext(ThemeContext)

@@ -4,9 +4,12 @@ import Link from 'next/link';
 import { IoMdSettings } from "react-icons/io";
 import { useRouter } from 'next/navigation';
 import { useContext } from "react";
+import { LoggedIn } from "@/context/LoggedIn";
+
 import { ThemeContext } from "@/context/ThemeContext";
 const Settings = ({ settings,name, url,username, setSettings }) => {
     const { theme, toggleTheme } = useContext(ThemeContext)
+  const { setLoggedInData } = useContext(LoggedIn);
 
     const router = useRouter()
     const handleLogOut = () => {
@@ -17,7 +20,9 @@ const Settings = ({ settings,name, url,username, setSettings }) => {
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
-                router.replace('/');
+                    setLoggedInData(false);
+                    router.replace('/')
+
             })
             .catch((error) => console.error("Error:", error));
     };
