@@ -32,7 +32,9 @@ const Settings = ({ settings,name, url,username, setSettings }) => {
                 <div className='font-semibold text-[14px]'>@{username}</div>
                 <div className='text-[15px]'>{name}</div>
                 <div className={`${theme==='light'?'border-gray-700':'border-gray-300'} border  w-full my-2`}></div>
-
+                <Link href={'/about-us'} className='w-full'>
+                    <div className={`${theme === 'dark' ? 'hover:bg-gray-200' : 'hover:bg-[#24292e]'} text-center text-[13px] rounded-lg p-1`}>About us</div>
+                </Link>
                 <Link href={'/terms-and-condition'} className='w-full'>
                     <div className={`${theme === 'dark' ? 'hover:bg-gray-200' : 'hover:bg-[#24292e]'} text-center text-[13px] rounded-lg p-1`}>Terms and Condition</div>
                 </Link>

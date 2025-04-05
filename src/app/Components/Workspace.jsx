@@ -160,7 +160,7 @@ const Workspace = () => {
             <div className='flex'>
                 <div className={`${theme==='dark'?'bg-[#F3F3F1] text-black':'bg-[#0c0e0f] text-white'} hidden sm:flex sm:flex-col fixed justify-between pr-6 shadow-lg h-screen w-1/5 `}>
                     <div className='space-y-6 flex-grow'>
-                        <div className={`md:mt-7 md:ml-5  ml-4 mt-4 md:text-4xl ${theme==='dark'?' text-black':' text-gray-200'}  font-semibold`}>
+                        <div className={`md:mt-7 md:ml-5  ml-4 mt-4 md:text-4xl ${theme==='dark'?' text-black':' text-gray-200'}  font-semibold font-myfont`}>
                             Lyncnest
                         </div>
 

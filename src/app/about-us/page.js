@@ -1,9 +1,15 @@
+
 import React from 'react'
+import Aboutus from '../Components/Aboutus'
 
 const page = () => {
+  
   return (
-    <div>About us</div>
-  )
+    <div className='w-screen h-screen'>
+
+      <Aboutus/>
+    </div>
+     )
 }
 
 export default page

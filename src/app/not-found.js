@@ -9,8 +9,8 @@ const Notfound = () => {
   return (
     <div >
            <Link href={'/'} className='absolute'>
-          <div className='sm:mt-8 mt-4 ml-4 sm:ml-8 text-xl font-semibold'>
-            Linknest
+          <div className='sm:mt-8 mt-4 ml-4 sm:ml-8 text-xl font-semibold font-myfont'>
+            Lyncnest
           </div>
         </Link>  
     <div className='flex justify-center items-center h-screen justify-center'>

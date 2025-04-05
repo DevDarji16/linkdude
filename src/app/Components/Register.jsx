@@ -31,7 +31,7 @@ const Register = () => {
               <div className='text-gray-500 text-[15px] text-center'>Signup/Login for free!</div>
               <Link href={'https://lyncnest-a5aq.onrender.com/auth/google'}><div className={`mt-6 border border-gray-300 rounded-full mt-4 flex p-2 gap-1 text-[15px] justify-center items-center cursor-pointer ${theme==='light'?'hover:bg-gray-700':'hover:bg-gray-100'}  font-semibold`}><FcGoogle size={23} />Sign up with Google</div></Link>
             
-              <div className='mt-6 text-[12px] text-gray-500 text-center'>By signing up, you agree to our <Link href={'/terms-and-condition'} className='underline'>Terms and Conditions</Link> & Google's <Link href={'https://policies.google.com/privacy'} target='_blank' className='underline'>Privacy Policy</Link>  </div>
+              <div className='mt-6 text-[12px] text-gray-500 text-center'>By signing up, you agree to our <Link href={'/terms-and-condition'} className='underline'>Terms and Conditions</Link> & Google's <Link href={'/privacy-policy'} target='_blank' className='underline'>Privacy Policy</Link>  </div>
             </div>
 
           </div>
