@@ -24,7 +24,7 @@ const Settings = ({ settings,name, url,username, setSettings }) => {
 
     return (
         <div className='relative ' onClick={(e) => e.stopPropagation()}>
-            <div className={`${settings ? 'opacity-100' : 'opacity-0 pointer-events-none'} w-46   duration-300 transition-all ease-in-out rounded-lg flex flex-col ${theme === 'light' ? 'bg-[#181b1e] text-white' : 'bg-gray-100'} items-center absolute bottom-18 sm:bottom-14 left-8  shadow-lg border p-2`}>
+            <div className={`${settings ? 'opacity-100' : 'opacity-0 pointer-events-none'} w-46   duration-300 transition-all ease-in-out rounded-lg flex flex-col ${theme === 'light' ? 'bg-[#181b1e] text-white' : 'bg-gray-100'} items-center absolute bottom-22 sm:bottom-14 left-8  shadow-lg border p-2`}>
                 <div className='text-[13px] '>Settings</div>
                 <div className={`${theme==='light'?'border-gray-700':'border-gray-300'} border  w-full my-2`}></div>
                 <div className='w-full flex justify-center'> <img src={url} className='rounded-full object-cover h-12 w-12' alt="" />
@@ -43,7 +43,7 @@ const Settings = ({ settings,name, url,username, setSettings }) => {
                     Log Out
                 </div>
             </div>
-            <div className='p-3 absolute bottom-6  sm:bottom-0   '>
+            <div className='p-3 absolute bottom-9  sm:bottom-0   '>
                 <div className={`${theme === 'dark' ? 'hover:bg-gray-200' : 'hover:bg-[#181b1e]'}  transition-all duration-300 rounded-lg inline-block p-2`}>
                     <IoMdSettings size={20} onClick={() => setSettings(!settings)} className='cursor-pointer' />
                 </div>
