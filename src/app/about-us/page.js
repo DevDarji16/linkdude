@@ -5,7 +5,7 @@ import Aboutus from '../Components/Aboutus'
 const page = () => {
   
   return (
-    <div className='w-screen h-screen'>
+    <div className='w-screen overflow-x-hidden h-screen'>
 
       <Aboutus/>
     </div>

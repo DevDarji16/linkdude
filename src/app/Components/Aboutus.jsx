@@ -4,6 +4,7 @@ import Navbar from '../Components/Navbar'
 import { ThemeContext } from "@/context/ThemeContext";
 import { LoggedIn } from "@/context/LoggedIn";
 import Image from 'next/image';
+import Footer from './Footer';
 
 const Aboutus = () => {
   const { theme } = useContext(ThemeContext);
@@ -11,7 +12,9 @@ const Aboutus = () => {
 
 
   return (
-    <div className={`${theme === 'dark' ? 'bg-white text-black' : 'bg-black text-white'} h-screen w-screen overflow-y-auto`}>
+    <div className='overflow-hidden '>
+
+    <div className={`${theme === 'dark' ? 'bg-white text-black' : 'bg-black text-white'}  w-screen overflow-y-auto`}>
       <Navbar />
       <main className={`h-full w-full  max-w-4xl mx-auto px-4 pt-28 py-12 selection:text-green-500`}>
 
@@ -48,6 +51,8 @@ const Aboutus = () => {
           <p>We’ve worked together to make Lyncnest powerful, customizable, and easy to use for creators everywhere.</p>
         </div>
       </main>
+    </div>
+      <Footer/>
     </div>
   )
 }
