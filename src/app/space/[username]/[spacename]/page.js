@@ -172,11 +172,11 @@ const SpaceLink = () => {
                     <div className='p-2  w-full'>
                         <div onClick={() => document.getElementById('profileImage').click()} className='rounded-full overflow-hidden relative h-16 flex w-full justify-center w-16'>
                             <img src={userDetails?.profileFile} className='rounded-full cursor-pointer w-[70px] h-[70px] object-cover' />
-                            <div className='absolute w-full h-full bg-black opacity-40'></div>
+                            <div className={`${theme==='light'?'bg-black':'bg-white'} absolute w-full h-full rounded-full  opacity-40`}></div>
                             <FaCamera className='absolute top-[45%] cursor-pointer' size={20} />
-                           
+                           <div className='flex'>
 
-                            <input id='profileImage' type="file" accept='image/*' className="p-2 hidden border border-gray-400 rounded-lg w-full my-1" onChange={(e) => {
+                            <input id='profileImage' type="file" accept='image/*' className="p-2 hidden border border-gray-400 rounded-lg  my-1" onChange={(e) => {
                                 const file = e.target.files[0];
                                 if (file) {
                                     setImgChanged(true);
@@ -187,6 +187,8 @@ const SpaceLink = () => {
                                     });
                                 }
                             }} />
+                           </div>
+
 
                         </div>
 
