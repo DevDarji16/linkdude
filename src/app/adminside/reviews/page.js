@@ -1,4 +1,4 @@
-import AdminReviews from '@/app/Components/adminReviews'
+import AdminReviews from '@/app/Components/AdminReviews'
 import React from 'react'
 
 const page = () => {
