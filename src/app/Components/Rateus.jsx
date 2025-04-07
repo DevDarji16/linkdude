@@ -9,6 +9,7 @@ import { ThemeContext } from "@/context/ThemeContext";
 import Navbar from "./Navbar";
 import MeteorsBackground from "./MeteorCanvas";
 import Toast from "./Toast";
+import Footer from "./Footer";
 
 export default function RateUsPage() {
     const { theme } = useContext(ThemeContext);
@@ -164,6 +165,7 @@ export default function RateUsPage() {
                     </Button>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 }
