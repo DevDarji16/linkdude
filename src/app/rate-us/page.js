@@ -1,8 +1,9 @@
 import React from 'react'
+import RateUsPage from '../Components/Rateus'
 
 const page = () => {
   return (
-    <div>Rate us</div>
+    <div><RateUsPage/></div>
   )
 }
 

@@ -8,7 +8,6 @@ import Footer from './Footer';
 
 const Aboutus = () => {
   const { theme } = useContext(ThemeContext);
-  const { loggedInData } = useContext(LoggedIn);
 
 
   return (

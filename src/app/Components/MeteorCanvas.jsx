@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React,{memo} from 'react';
 import { loadSlim } from 'tsparticles-slim';
 import Particles from 'react-tsparticles';
 import { useContext } from "react";
@@ -93,4 +93,4 @@ const MeteorsBackground = () => {
   );
 };
 
-export default MeteorsBackground;
+export default memo(MeteorsBackground);
