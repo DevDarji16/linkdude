@@ -20,7 +20,7 @@ export default function AdvancedLoadingScreen() {
           exit={{ opacity: 0, y: -40 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="flex flex-col items-center justify-center space-y-6 text-white">
+          <div className="flex flex-col items-center justify-center space-y-6 text-white select-none">
             {/* Glowing Logo Text */}
             <motion.h1
               className="text-5xl font-extrabold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 drop-shadow-lg font-myfont"

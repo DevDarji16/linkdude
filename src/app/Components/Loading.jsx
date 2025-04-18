@@ -23,7 +23,7 @@ export default function LoadingScreen() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="flex flex-col items-center gap-4">
+          <div className="flex flex-col items-center gap-4 select-none">
             <motion.div
               className="text-5xl font-bold tracking-wide font-myfont"
               initial={{ opacity: 0, y: 20 }}
