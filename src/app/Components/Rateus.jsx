@@ -91,7 +91,7 @@ export default function RateUsPage() {
                     className={`w-full relative max-w-md p-6 rounded-2xl shadow-xl space-y-6 transition-all duration-300 ${isDark ? "bg-zinc-900 text-white" : "bg-white text-black"
                         }`}
                 >
-                    <h2 className="text-2xl font-bold text-center">Rate Lyncnest</h2>
+                    <h2 className="text-2xl font-bold text-center">Rate Linkdude</h2>
 
                     {/* Star Rating */}
                     <div className="flex justify-center">

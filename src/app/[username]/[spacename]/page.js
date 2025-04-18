@@ -1,7 +1,7 @@
 import Global from "@/app/Components/Global"
 
 export const metadata={
-  title:'Lyncnest | Global'
+  title:'Linkdude | Global'
 }
 
 const GlobalServer = () => {

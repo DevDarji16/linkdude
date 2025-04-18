@@ -32,7 +32,7 @@ const Navbar = () => {
             <IoMdClose onClick={()=>setMenuOpen(!menuOpen)} className='flex sm:hidden ' size={23}/>
             :<IoIosMenu onClick={()=>setMenuOpen(!menuOpen)} className='flex sm:hidden ' size={23} />}
           
-            <Link href={'/'}><div className='font-myfont text-xl font-semibold'>LyncNest</div></Link>
+            <Link href={'/'}><div className='font-myfont text-xl font-semibold'>Linkdude</div></Link>
             <div className='flex justify-center items-center '>
 
               <div className=' cursor-pointer' onClick={toggleTheme}>{theme === 'dark' ? <MdOutlineDarkMode size={27} /> : <MdLightMode size={27} />}</div>

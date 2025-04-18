@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 
 export const metadata={
-  title:'Page not found | Lyncnest'
+  title:'Page not found | Linkdude'
 }
 
 const Notfound = () => {
@@ -10,7 +10,7 @@ const Notfound = () => {
     <div >
            <Link href={'/'} className='absolute'>
           <div className='sm:mt-8 mt-4 ml-4 sm:ml-8 text-xl font-semibold font-myfont'>
-            Lyncnest
+          Linkdude
           </div>
         </Link>  
     <div className='flex justify-center items-center h-screen justify-center'>

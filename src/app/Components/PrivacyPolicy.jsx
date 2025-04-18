@@ -23,19 +23,19 @@ const PrivacyPolicy = () => {
           <p><strong>Last Updated:</strong> 3 April 2025</p>
 
           <p>
-            This Privacy Policy describes how Lyncnest collects, uses, and protects your information when you use our platform. By accessing or using Lyncnest, you consent to the practices outlined below.
+            This Privacy Policy describes how Linkdude collects, uses, and protects your information when you use our platform. By accessing or using Linkdude, you consent to the practices outlined below.
           </p>
 
           <h2 className="text-2xl font-semibold mt-6">Information We Collect</h2>
           <ul className="list-disc ml-6 mt-2 space-y-1">
             <li><strong>Account Information:</strong> Name, email address, and other details you provide during registration.</li>
-            <li><strong>Usage Data:</strong> Analytics on how you interact with Lyncnest to help us improve the experience.</li>
+            <li><strong>Usage Data:</strong> Analytics on how you interact with Linkdude to help us improve the experience.</li>
             <li><strong>Content:</strong> Links, titles, images, and any other data you upload or share through the platform.</li>
           </ul>
 
           <h2 className="text-2xl font-semibold mt-6">How We Use Your Information</h2>
           <ul className="list-disc ml-6 mt-2 space-y-1">
-            <li>To provide and personalize your experience on Lyncnest.</li>
+            <li>To provide and personalize your experience on Linkdude.</li>
             <li>To improve our features and platform performance.</li>
             <li>To communicate updates, support, and important notices.</li>
             <li>To ensure safety and prevent fraudulent activities.</li>
@@ -43,7 +43,7 @@ const PrivacyPolicy = () => {
 
           <h2 className="text-2xl font-semibold mt-6">Cookies and Tracking</h2>
           <p>
-            Lyncnest may use cookies and similar technologies to enhance user experience, analyze site usage, and deliver relevant content. You can manage cookie preferences in your browser settings.
+          Linkdude may use cookies and similar technologies to enhance user experience, analyze site usage, and deliver relevant content. You can manage cookie preferences in your browser settings.
           </p>
 
           <h2 className="text-2xl font-semibold mt-6">Data Security</h2>
@@ -65,7 +65,7 @@ const PrivacyPolicy = () => {
 
           <h2 className="text-2xl font-semibold mt-6">Changes to This Policy</h2>
           <p>
-            We may update this Privacy Policy as needed. Changes will be posted on this page, and continued use of Lyncnest implies your acceptance of the updated policy.
+            We may update this Privacy Policy as needed. Changes will be posted on this page, and continued use of Linkdude implies your acceptance of the updated policy.
           </p>
 
           <h2 className="text-2xl font-semibold mt-6">Contact Us</h2>

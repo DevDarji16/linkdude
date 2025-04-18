@@ -4,7 +4,7 @@ import Link from 'next/link'
 import GetUsername from '../Components/GetUsername'
 
 export const metadata={
-  title:'Add Username | Lyncnest'
+  title:'Add Username | Linkdude'
 }
 
 const Getusername = () => {

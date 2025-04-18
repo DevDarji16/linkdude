@@ -5,7 +5,7 @@ const PageNotfound = () => {
     <div className='bg-[#F3F3F1]'>
     <Link href={'/'} className='absolute'>
    <div className='sm:mt-8 mt-4 ml-4 sm:ml-8 text-xl font-semibold'>
-     Lyncnest
+     Linkdude
    </div>
  </Link>  
 <div className='flex justify-center items-center h-screen justify-center'>

@@ -19,7 +19,7 @@ const Register = () => {
 
         <Link href={'/'} className='absolute' >
           <div className='font-myfont sm:pt-8 select-none  pt-4 pl-4 inline-block sm:pl-8 text-xl sm:text-2xl font-semibold'>
-            Lyncnest
+          Linkdude
           </div>
         </Link> 
 
@@ -27,7 +27,7 @@ const Register = () => {
 
           <div className={` shadow-lg ${theme==='light'?'text-white bg-gray-800':'text-black bg-white'} z-10   p-6 sm:max-w-2xl rounded-lg `}>
             <div className='space-y-2'>
-              <div className='font-extrabold text-2xl sm:text-4xl text-center'>Start with Lyncnest</div>
+              <div className='font-extrabold text-2xl sm:text-4xl text-center'>Start with Linkdude</div>
               <div className='text-gray-500 text-[15px] text-center'>Signup/Login for free!</div>
               <Link href={'https://lyncnest-a5aq.onrender.com/auth/google'}><div className={`mt-6 border border-gray-300 rounded-full mt-4 flex p-2 gap-1 text-[15px] justify-center items-center cursor-pointer ${theme==='light'?'hover:bg-gray-700':'hover:bg-gray-100'}  font-semibold`}><FcGoogle size={23} />Sign up with Google</div></Link>
             

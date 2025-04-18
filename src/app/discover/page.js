@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const metadata={
-  title:'Discover | Lyncnest'
+  title:'Discover | Linkdude'
 }
 
 const Discover = () => {

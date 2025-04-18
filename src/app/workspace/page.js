@@ -2,7 +2,7 @@
 import Workspace from '../Components/Workspace';
 
 export const metadata={
-    title:'Workspace | Lyncnest'
+    title:'Workspace | Linkdude'
 }
 
 const Workspace2 = () => {  

@@ -3,7 +3,7 @@ import React from 'react'
 import Register from '../Components/Register';
 
 export const metadata={
-  title:'Sign up | Lyncnest'
+  title:'Sign up | Linkdude'
 }
 
 const page = () => {

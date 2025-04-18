@@ -1,6 +1,8 @@
 import React from 'react'
 import Termsandconditions from '../Components/Termsandconditions'
-
+export const metadata={
+  title:'Terms and Conditions | Linkdude'
+}
 const TermsandCondition = () => {
 
   return (

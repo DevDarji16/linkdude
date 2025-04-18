@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const metadata={
-  title:'Templates | Lyncnest'
+  title:'Templates | Linkdude'
 }
 const Templates = () => {
   return (

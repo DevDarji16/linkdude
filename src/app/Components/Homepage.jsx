@@ -40,7 +40,7 @@ const Homepage = () => {
     },
     {
       title: "One-Click Sharing",
-      description: "Share your Lyncnest profile with a unique link across all platforms.",
+      description: "Share your Linkdude profile with a unique link across all platforms.",
       icon: "🔗",
     },
     {
@@ -103,7 +103,7 @@ const Homepage = () => {
             />
 
             <h2 className="font-myfont  selection:text-purple-500 text-4xl font-bold  mb-6 relative ">
-              Why Choose <span className="font-bold bg-clip-text text-transparent bg-gradient-to-tr from-purple-700 to-blue-400">Lyncnest?</span>
+              Why Choose <span className="font-bold bg-clip-text text-transparent bg-gradient-to-tr from-purple-700 to-blue-400">Linkdude?</span>
             </h2>
           </div>
           <p className={`${theme === 'light' ? 'text-white' : 'text-black'} text-lg mb-12`}>

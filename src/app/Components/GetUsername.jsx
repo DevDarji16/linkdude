@@ -49,7 +49,7 @@ const GetUsername = () => {
        <FailedToast message={failedToastMessage} showToast={showFailedToast} close={()=>setShowFailedToast(false)}/>
        <Link href={'/'} className='absolute'>
         <div className={`${theme==='light'?'text-white':'text-black'} sm:mt-8 mt-4 ml-4 sm:ml-8 text-xl font-semibold`}>
-          Lyncnest
+          Linkdude
         </div>
       </Link>
       <div className={`flex flex-col space-y-6 justify-center items-center px-2 h-screen ${theme === 'dark' ? 'bg-[#F3F3F1] text-black' : 'bg-[#181b1e] text-white'}`}>
@@ -59,7 +59,7 @@ const GetUsername = () => {
           <div className='flex justify-center'>
 
             <div className={`flex justify-center ${theme === 'dark' ? 'bg-[#F3F3F1] text-black' : 'bg-gray-800 text-white'} p-2 rounded-lg `}>
-              <div className={`${theme==='dark'?'text-white':'text-black'}font-semibold`}>lync.nest/<input className=' focus:outline-none' value={username} onChange={e => setUsername(e.target.value)} type='text' placeholder='username' /></div>
+              <div className={`${theme==='dark'?'text-white':'text-black'}font-semibold`}>link.dude/<input className=' focus:outline-none' value={username} onChange={e => setUsername(e.target.value)} type='text' placeholder='username' /></div>
             </div>
 
           </div>

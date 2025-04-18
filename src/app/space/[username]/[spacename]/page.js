@@ -214,7 +214,7 @@ const SpaceLink = () => {
                 <div className={`hidden  sm:flex sm:flex-col fixed justify-between pr-6 shadow-lg h-screen w-1/5 ${theme === 'dark' ? 'bg-[#F3F3F1] text-black' : 'bg-[#0c0e0f] text-white'}`}>
                     <div className='space-y-6 flex-grow'>
                         <div className={`md:mt-7 md:ml-5  ml-4 mt-4 md:text-xl font-semibold ${theme === 'dark' ? ' text-black' : ' text-gray-100'} select-none `}>
-                            Lyncnest
+                        Linkdude
                         </div>
 
                         <div className={`md:ml-6 ml-3 mt-7 flex gap-2 ${theme === 'light' ? 'text-gray-100' : 'text-gray-500'}  flex-col`}>
