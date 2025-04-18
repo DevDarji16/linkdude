@@ -12,6 +12,7 @@ import { IoMdAddCircleOutline } from "react-icons/io";
 import { MdOutlinePublishedWithChanges } from "react-icons/md";
 import { MdOutlineDashboardCustomize } from "react-icons/md";
 import Footer from './Footer';
+import GetStartedButton from './GetStarted';
 
 const arr = ['create', 'share', 'inspire']
 const Homepage = () => {
@@ -67,11 +68,15 @@ const Homepage = () => {
 
   return (
     <div className='relative selection:text-green-500 overflow-hidden'>
-      <div className={`${theme === 'dark' ? 'bg-[#F3F3F1] text-black' : 'bg-black text-white'} relative h-screen bg-[#F3F3F1] flex justify-center items-center`}>
+      <div className={`${theme === 'dark' ? 'bg-[#F3F3F1] text-black' : 'bg-black text-white'} relative h-screen bg-[#F3F3F1] flex justify-center flex-col  items-center`}>
 
 
         <MeteorCanvas />
-        <div className='selection:text-green-500  text-center z-20 font-extrabold  text-5xl sm:text-7xl'> One simple link for everything <br />  you <span ref={intro} className='bg-gradient-to-tr from-purple-600 to-blue-400 text-transparent bg-clip-text'></span> </div>
+        <div className='selection:text-green-500  text-center z-20 font-extrabold  text-5xl sm:text-7xl'> One simple link for everything <br />  you <span ref={intro} className='bg-gradient-to-tr from-purple-600 to-blue-400 text-transparent bg-clip-text'></span> 
+        
+        </div>
+        <Link href={'/register'}><div className='mt-18'><GetStartedButton/> </div></Link>
+        
       </div>
       <div className={`${theme === 'dark' ? 'bg-gray-100' : 'bg-black'} w-full px-12 `}>
         <div className='w-full border border-gray-400'></div>
