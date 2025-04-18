@@ -16,7 +16,7 @@ const Spaces = (props) => {
         <div className={`py-4 px-2 text-xl`}>Your spaces</div>
         <div className='flex flex-wrap gap-4'>
           <div onClick={() => {
-            props.setSpaceClick(!props.spaceClick); console.log(props.spaceClick)
+            props.setSpaceClick(!props.spaceClick); 
           }} className='h-32 w-32 cursor-pointer rounded-3xl hover:text-white relative border  hover:bg-black transition-all duration-200  flex flex-col justify-center items-center'>
             <div className='text-4xl'><FaPlus /></div>
             <div className='font-semibold absolute bottom-4'>Add Space</div>

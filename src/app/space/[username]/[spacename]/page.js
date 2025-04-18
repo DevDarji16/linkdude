@@ -16,6 +16,7 @@ import Profile from '@/app/Components/Profile';
 import FailedToast from '@/app/Components/FailedToast';
 import Toast from '@/app/Components/Toast';
 import { FaCamera } from "react-icons/fa";
+import LoadingScreen from '@/app/Components/Loading';
 const SpaceLink = () => {
 
     const { theme, toggleTheme } = useContext(ThemeContext)
@@ -53,7 +54,6 @@ const SpaceLink = () => {
                 if(data?.message){
                     setError(true)
                 }
-                console.log('userdata real', data)
                 setUserData(data)
                 setUserDetails({ username: data.username, name: data.profileName, profile: data.profile,profileFile:data.profile })
             }
@@ -70,10 +70,8 @@ const SpaceLink = () => {
         )
             .then(response => response.json())
             .then(data => {
-                console.log('Real data thing', data)
                 if (data?.error) {
                     setError(true)
-                    console.log('done error')
                 }
                 else {
                     setBio(data?.spaceBio)
@@ -99,7 +97,6 @@ const SpaceLink = () => {
                     setError(true)
                 }
                 else {
-                    console.log('Links', data)
                     setLinkContainer(data.links)
                     setSocialContainer(data.socialMediaLinks)
                 }
@@ -133,7 +130,6 @@ const SpaceLink = () => {
             })
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data)
                     setEdited(!edited)
                     setShowProfile(false)
                     setToastMessage('Profile edited successfully')
@@ -160,7 +156,7 @@ const SpaceLink = () => {
     if (error) return <PageNotfound />
     return (
         <div onClick={() => setSettings(false)} className={`${theme === 'dark' ? 'bg-[#F3F3F1] text-black' : 'bg-[#181b1e] text-white'} relative h-screen  overflow-x-hidden`}>
-
+            <LoadingScreen/>
             <div className='absolute top-4 right-6 sm:top-11 sm:right-20 cursor-pointer' onClick={toggleTheme}>{theme === 'dark' ? <MdOutlineDarkMode size={27} /> : <MdLightMode size={27} />}</div>
             <FailedToast message={failedToastMessage} showToast={showFailedToast} close={() => setShowFailedToast(false)} />
             <Toast message={toastMessage} showToast={showToast} close={() => setShowToast(false)} />
@@ -213,7 +209,7 @@ const SpaceLink = () => {
             <div className='flex'>
                 <div className={`hidden  sm:flex sm:flex-col fixed justify-between pr-6 shadow-lg h-screen w-1/5 ${theme === 'dark' ? 'bg-[#F3F3F1] text-black' : 'bg-[#0c0e0f] text-white'}`}>
                     <div className='space-y-6 flex-grow'>
-                        <div className={`md:mt-7 md:ml-5  ml-4 mt-4 md:text-xl font-semibold ${theme === 'dark' ? ' text-black' : ' text-gray-100'} select-none `}>
+                        <div className={`md:mt-7 md:ml-5  ml-4 mt-4 md:text-4xl font-semibold ${theme === 'dark' ? ' text-black' : ' text-gray-100'} select-none font-myfont`}>
                         Linkdude
                         </div>
 

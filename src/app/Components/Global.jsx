@@ -128,13 +128,11 @@ const Global = ({update}) => {
       })
         .then(response => response.json())
         .then(data => {
-          console.log('data',data)
           if(data?.error){
             setError(true)
           }
           else{
             const selectedTemplate=templates.find((t)=>t.id===data.templateNo) 
-            console.log('Selected Template',selectedTemplate)
             setTemplate(selectedTemplate)
             setData(data)
             setSMPosition(data.socialMediaPosition)

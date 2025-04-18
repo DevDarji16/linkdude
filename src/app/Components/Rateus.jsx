@@ -59,7 +59,6 @@ export default function RateUsPage() {
                 })
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data)
                     setRating(0);
                     setHover(0);
                     setEmail("");

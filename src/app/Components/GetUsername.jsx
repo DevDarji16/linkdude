@@ -25,7 +25,6 @@ const GetUsername = () => {
     })
       .then((response) => { return response.json() })
       .then(data => {
-        console.log('real data',data)
         if(data.success!=='False'){
 
           router.replace('/')

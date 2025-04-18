@@ -8,7 +8,6 @@ const Templates = ({spacename}) => {
   const [showToast,setShowToast]=useState(false)
 
   const handleChangeTheme = () => {
-    console.log(themeid)
     setIsLoading(true)
     fetch('https://lyncnest-a5aq.onrender.com/space/updatespace', {
       method: 'POST',
@@ -24,7 +23,6 @@ const Templates = ({spacename}) => {
     })
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         setShowToast(true)
         setTimeout(()=>{
           setShowToast(false)

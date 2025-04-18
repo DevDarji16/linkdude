@@ -69,7 +69,6 @@ const UserLinks = (params) => {
     })
       .then(response => response.json())
       .then(data => {
-        console.log('data',data)
         if(data?.Error){
           setURL('')
           setTitle('')  
@@ -114,7 +113,6 @@ const UserLinks = (params) => {
     })
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         params.setlinksadded(!params.linksadded)
         setDeleteMenu(false)
         setUpdate(!update)
@@ -129,7 +127,6 @@ const UserLinks = (params) => {
   }
 
   const updateLinksArray = (sortedIds) => {
-    console.log('Sorted IDs', sortedIds)
     fetch('https://lyncnest-a5aq.onrender.com/space/draganddrop', {
       method: 'POST',
       headers: {
@@ -141,7 +138,6 @@ const UserLinks = (params) => {
     })
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         setUpdate(!update)
       })
   }
@@ -153,7 +149,6 @@ const UserLinks = (params) => {
     if (over && active.id !== over.id) {
 
       params.setLinkContainer(links => {
-        console.log('links', links)
         const oldIndex = links.findIndex(link => link._id === active.id)
         const newIndex = links.findIndex(link => link._id === over.id)
         const updatedLinks = arrayMove(links, oldIndex, newIndex)
@@ -184,7 +179,6 @@ const UserLinks = (params) => {
       })
       .then(response=>response.json())
       .then(data=>{
-        console.log(data)
         
         setBioCLick(false)
         setUpdate(!update)
@@ -229,7 +223,6 @@ const UserLinks = (params) => {
           },2000)
         }
         else{
-          console.log('url thing',data)
         params.setlinksadded(!params.linksadded)
         setSocialMediaURL('')
         setSocialClick(false)
@@ -265,7 +258,6 @@ const UserLinks = (params) => {
     })
     .then(response=>response.json())
     .then(data=>{
-      console.log(data)
       setRemoveSocialMediaMenu(false)
       params.setlinksadded(!params.linksadded)
       setUpdate(!update)
@@ -296,7 +288,6 @@ const UserLinks = (params) => {
     })
     .then(response=>response.json())
     .then(data=>{
-      console.log(data)
       setUpdate(!update)
       setToastMessage('SM Postion Changed!')
       setShowToast(true)

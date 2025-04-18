@@ -19,7 +19,6 @@ const Settings = ({ settings,name, url,username, setSettings }) => {
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log(data);
                     setLoggedInData(false);
                     router.replace('/')
 
