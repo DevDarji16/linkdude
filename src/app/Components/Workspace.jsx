@@ -13,6 +13,7 @@ import { ThemeContext } from "@/context/ThemeContext";
 
 import { MdLightMode, MdOutlineDarkMode } from "react-icons/md";
 import LoadingScreen from './Loading';
+import AdvancedLoadingScreen from './LoadingNew';
 const Workspace = () => {
     const {theme,toggleTheme}=useContext(ThemeContext)
 
@@ -110,7 +111,7 @@ const Workspace = () => {
     
     return (
         <div onClick={() => setSettings(false)} className={`${theme==='dark'?'bg-[#F3F3F1] text-black':'bg-[#181b1e] text-white'} relative h-screen  overflow-x-hidden`}>
-            <LoadingScreen/>
+            <AdvancedLoadingScreen/>
             <div className='absolute top-4 right-6 sm:top-11 sm:right-20 cursor-pointer' onClick={toggleTheme}>{theme==='dark'?<MdOutlineDarkMode size={27}/>:<MdLightMode size={27}/>}</div>
             {/* Add space menu */}
             <div onClick={() => setSpaceClick(false)} className={`${spaceClick ? 'opacity-100' : 'opacity-0 pointer-events-none'}  transition-all duration-300 ease-in-out fixed inset-0 flex justify-center items-center mx-2  z-10  backdrop-blur-[3px]`}>
