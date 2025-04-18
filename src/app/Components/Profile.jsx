@@ -4,7 +4,7 @@ import { LuPencil } from "react-icons/lu";
 const Profile = ({showProfile,setShowProfile}) => {
   return (
     <div className='relative'>
-        <div className='absolute bottom-15.5 sm:bottom-6.5 left-14'>
+        <div className='absolute bottom-18.5 sm:bottom-6.5 left-14'>
         <LuPencil onClick={()=>{setShowProfile(!showProfile)}} className='cursor-pointer '  size={18} />
           </div>
     </div>

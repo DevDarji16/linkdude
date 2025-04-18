@@ -22,14 +22,14 @@ export default function AdvancedLoadingScreen() {
         >
           <div className="flex flex-col items-center justify-center space-y-6 text-white select-none">
             {/* Glowing Logo Text */}
-            <motion.h1
-              className="text-5xl font-extrabold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 drop-shadow-lg font-myfont"
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1 }}
+            <motion.div
+              className="text-5xl font-bold tracking-wide font-myfont"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
             >
               LinkDude
-            </motion.h1>
+            </motion.div>
 
             {/* Rotating Loader Icon */}
             <motion.div
