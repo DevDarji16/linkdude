@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
-export default function GetStartedButton() {
+export default function GetStartedButton({loggedIn}) {
   return (
     <motion.button
       whileHover={{ scale: 1.05 }}
@@ -14,7 +14,8 @@ export default function GetStartedButton() {
 
       {/* Text + Icon */}
       <span className="relative z-10 flex items-center gap-2 text-lg tracking-wide">
-        Get Started
+        {loggedIn?'Workspace':'Get Started'}
+        
         <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
       </span>
     </motion.button>

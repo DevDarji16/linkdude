@@ -14,6 +14,7 @@ import { ThemeContext } from "@/context/ThemeContext";
 import { MdLightMode, MdOutlineDarkMode } from "react-icons/md";
 import LoadingScreen from './Loading';
 import AdvancedLoadingScreen from './LoadingNew';
+import Link from 'next/link';
 const Workspace = () => {
     const {theme,toggleTheme}=useContext(ThemeContext)
 
@@ -179,6 +180,11 @@ const Workspace = () => {
                             <div className={`${menuOption === 3 ? 'bg-black text-white' : 'hover:bg-gray-600'} w-full transition-all duration-300 hover:text-white  cursor-pointer p-2 pl-4 rounded-lg`} onClick={() => { setMenuOption(3); }}>
                                 Web Templates
                             </div>
+                            <div className='border border-gray-400 w-full'></div>
+
+                            <Link href={'/'} className={`${menuOption === 4 ? 'bg-black text-white' : 'hover:bg-gray-600'} w-full transition-all duration-300  hover:text-white p-2 cursor-pointer pl-4 rounded-lg `} onClick={() => { setMenuOption(4); setSettings(false) }}><div >Home</div></Link>
+                            <div className='border border-gray-400 w-full'></div>
+
                         </div>
 
                     </div>
@@ -193,11 +199,12 @@ const Workspace = () => {
                     <div className='flex  flex-col mt-10 space-y-3 mx-3 text-xl font-semibold '>
                         <div className='pl-6 py-1' onClick={() => { setMenuOption(1); setMenuOpen(!menuOpen) }} >Spaces</div>
                         <div className='border w-full'></div>
-                        {/* <div className='pl-6 py-1' onClick={() => { setMenuOption(2); setMenuOpen(!menuOpen) }}>Templates</div> */}
-                        {/* <div className='border w-full'></div> */}
+                       
 
                         <div className='pl-6 py-1' onClick={() => { setMenuOption(3); setMenuOpen(!menuOpen) }}>Web Templates</div>
-
+                        <div className='border w-full'></div>
+                        <Link href={'/'}><div className='pl-6 py-1' >Home</div></Link>
+                        <div className='border w-full '></div>
                     </div>
 
                     <Settings settings={settings} username={userData?.username} name={userData?.profileName} url={userData?.profile} setSettings={setSettings} />

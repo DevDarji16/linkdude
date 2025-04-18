@@ -156,7 +156,7 @@ const SpaceLink = () => {
     if (error) return <PageNotfound />
     return (
         <div onClick={() => setSettings(false)} className={`${theme === 'dark' ? 'bg-[#F3F3F1] text-black' : 'bg-[#181b1e] text-white'} relative h-screen  overflow-x-hidden`}>
-            <LoadingScreen/>
+            {/* <LoadingScreen/> */}
             <div className='absolute top-4 right-6 sm:top-11 sm:right-20 cursor-pointer' onClick={toggleTheme}>{theme === 'dark' ? <MdOutlineDarkMode size={27} /> : <MdLightMode size={27} />}</div>
             <FailedToast message={failedToastMessage} showToast={showFailedToast} close={() => setShowFailedToast(false)} />
             <Toast message={toastMessage} showToast={showToast} close={() => setShowToast(false)} />
@@ -214,6 +214,9 @@ const SpaceLink = () => {
                         </div>
 
                         <div className={`md:ml-6 ml-3 mt-7 flex gap-2 ${theme === 'light' ? 'text-gray-100' : 'text-gray-500'}  flex-col`}>
+                        <Link href={'/workspace'} className={`${menuOption === 3 ? 'bg-black text-white' : 'hover:bg-gray-600'} w-full transition-all duration-300  hover:text-white p-2 cursor-pointer pl-4 rounded-lg `} onClick={() => { setMenuOption(3); setSettings(false) }}><div >Workspace</div></Link>
+                        <div className='border border-gray-400 w-full'></div>
+
                             <div className={`${menuOption === 1 ? 'bg-black text-white' : 'hover:bg-gray-600'} w-full transition-all duration-300  hover:text-white p-2 cursor-pointer pl-4 rounded-lg `} onClick={() => { setMenuOption(1); setSettings(false) }}>
                                 Links
                             </div>
@@ -222,6 +225,8 @@ const SpaceLink = () => {
                                 Templates
                             </div>
                             <div className='border border-gray-400 w-full'></div>
+                            <Link href={'/'} className={`${menuOption === 4 ? 'bg-black text-white' : 'hover:bg-gray-600'} w-full transition-all duration-300  hover:text-white p-2 cursor-pointer pl-4 rounded-lg `} onClick={() => { setMenuOption(4); setSettings(false) }}><div >Home</div></Link>
+                        <div className='border border-gray-400 w-full'></div>
 
 
                         </div>
@@ -243,6 +248,10 @@ const SpaceLink = () => {
                         <div className='border w-full '></div>
                         <div className='pl-6 py-1' onClick={() => { setMenuOption(2); setMenuOpen(!menuOpen) }}>Templates</div>
                         <div className='border w-full'></div>
+                        <Link href={'/workspace'}><div className='pl-6 py-1' >Workspace</div></Link>
+                        <div className='border w-full '></div>
+                        <Link href={'/'}><div className='pl-6 py-1' >Home</div></Link>
+                        <div className='border w-full '></div>
                     </div>
                     <div >
                     <Settings settings={settings} username={userData?.username} name={userData?.profileName} url={userData?.profile} setSettings={setSettings} />
@@ -266,7 +275,7 @@ const SpaceLink = () => {
                             <div className={`p-2 ${theme === 'dark' ? 'bg-gray-300' : 'bg-gray-800'}  rounded-lg inline-block mb-3 text-[14px]`}>Your Nest is now live : <Link href={`/${params?.username}/${params?.spacename}`} target='_blank' className='text-blue-400 underline hover:text-blue-500 cursor-pointer'>{params?.username}/{params?.spacename}</Link></div>
                         </div>
                         <div className='border w-full border-gray-400'></div>
-                        {menuOption === 1 ? <UserLinks setMenuOption={setMenuOption} socialContainer={socialContainer} setSocialContainer={setSocialContainer} setLinkContainer={setLinkContainer} linkContainer={linkContainer} linksadded={linksadded} setlinksadded={setlinksadded} bio={bio} setBio={setBio} spacename={params.spacename} userData={userData} /> : <Templates spacename={params.spacename} />}
+                        {menuOption === 1 ? <UserLinks setMenuOption={setMenuOption} socialContainer={socialContainer} setSocialContainer={setSocialContainer} setLinkContainer={setLinkContainer} linkContainer={linkContainer} linksadded={linksadded} setlinksadded={setlinksadded} bio={bio} setBio={setBio} spacename={params.spacename} userData={userData} /> :menuOption===2? <Templates spacename={params.spacename} />:''}
 
                     </div>
                 </div>

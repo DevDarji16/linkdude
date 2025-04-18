@@ -4,7 +4,6 @@ import React, { useRef, useEffect, useMemo } from 'react'
 import MeteorCanvas from './MeteorCanvas';
 import { useContext } from "react";
 import { ThemeContext } from "@/context/ThemeContext";
-import Image from 'next/image';
 import { motion } from "framer-motion";
 import Link from 'next/link'
 import { LuUserRoundCheck } from "react-icons/lu";
@@ -13,9 +12,12 @@ import { MdOutlinePublishedWithChanges } from "react-icons/md";
 import { MdOutlineDashboardCustomize } from "react-icons/md";
 import Footer from './Footer';
 import GetStartedButton from './GetStarted';
-
+import { LoggedIn } from "@/context/LoggedIn";
 const arr = ['create', 'share', 'inspire']
 const Homepage = () => {
+
+  const { loggedInData } = useContext(LoggedIn);
+  
   const intro = useRef(null)
   const { theme, toggleTheme } = useContext(ThemeContext)
   const features = [
@@ -75,7 +77,7 @@ const Homepage = () => {
         <div className='selection:text-green-500  text-center z-20 font-extrabold  text-5xl sm:text-7xl'> One simple link for everything <br />  you <span ref={intro} className='bg-gradient-to-tr from-purple-600 to-blue-400 text-transparent bg-clip-text'></span> 
         
         </div>
-        <Link href={'/register'}><div className='mt-18'><GetStartedButton/> </div></Link>
+        <Link href={`${loggedInData?'/workspace':'/register'}`} ><div className='mt-18'><GetStartedButton loggedIn={loggedInData}/> </div></Link>
         
       </div>
       <div className={`${theme === 'dark' ? 'bg-gray-100' : 'bg-black'} w-full px-12 `}>
