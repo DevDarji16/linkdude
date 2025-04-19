@@ -64,7 +64,7 @@ const GetUsername = () => {
       <FailedToast message={failedToastMessage} showToast={showFailedToast} close={() => setShowFailedToast(false)} />
 
       <Link href={'/'} className='absolute'>
-        <div className={`${theme === 'light' ? 'text-white' : 'text-black'} sm:mt-8 mt-4 ml-4 sm:ml-8 text-xl font-semibold`}>
+        <div className={`${theme === 'light' ? 'text-white' : 'text-black'} sm:mt-8 mt-4 ml-4 sm:ml-8 text-xl font-semibold font-myfont`}>
           Linkdude
         </div>
       </Link>
