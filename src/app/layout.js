@@ -16,13 +16,13 @@ const geistMono = Geist_Mono({
 
 
 export const metadata = {
-  title: "LyncNest",
-  description: "Create and manage beautiful link-in-bio pages with LyncNest.",
+  title: "Linkdude",
+  description: "Create and manage beautiful link-in-bio pages with Linkdude.",
   openGraph: {
-    title: "LyncNest",
-    description: "Create and manage beautiful link-in-bio pages with Lyncnest.",
-    url: "https://lyncnest.vercel.app",
-    siteName: "LyncNest",
+    title: "Linkdude",
+    description: "Create and manage beautiful link-in-bio pages with Linkdude.",
+    url: "https://linkdude.vercel.app",
+    siteName: "Linkdude",
   
     type: "website",
   },

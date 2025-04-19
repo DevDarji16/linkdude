@@ -156,7 +156,7 @@ const SpaceLink = () => {
     if (error) return <PageNotfound />
     return (
         <div onClick={() => setSettings(false)} className={`${theme === 'dark' ? 'bg-[#F3F3F1] text-black' : 'bg-[#181b1e] text-white'} relative h-screen  overflow-x-hidden`}>
-            {/* <LoadingScreen/> */}
+            <LoadingScreen/>
             <div className='absolute top-4 right-6 sm:top-11 sm:right-20 cursor-pointer' onClick={toggleTheme}>{theme === 'dark' ? <MdOutlineDarkMode size={27} /> : <MdLightMode size={27} />}</div>
             <FailedToast message={failedToastMessage} showToast={showFailedToast} close={() => setShowFailedToast(false)} />
             <Toast message={toastMessage} showToast={showToast} close={() => setShowToast(false)} />
