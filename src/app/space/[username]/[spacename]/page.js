@@ -156,7 +156,7 @@ const SpaceLink = () => {
     if (error) return <PageNotfound />
     return (
         <div onClick={() => setSettings(false)} className={`${theme === 'dark' ? 'bg-[#F3F3F1] text-black' : 'bg-[#181b1e] text-white'} relative h-screen  overflow-x-hidden`}>
-            <LoadingScreen/>
+            {/* <LoadingScreen/> */}
             <div className='absolute top-4 right-6 sm:top-11 sm:right-20 cursor-pointer' onClick={toggleTheme}>{theme === 'dark' ? <MdOutlineDarkMode size={27} /> : <MdLightMode size={27} />}</div>
             <FailedToast message={failedToastMessage} showToast={showFailedToast} close={() => setShowFailedToast(false)} />
             <Toast message={toastMessage} showToast={showToast} close={() => setShowToast(false)} />
@@ -214,8 +214,7 @@ const SpaceLink = () => {
                         </div>
 
                         <div className={`md:ml-6 ml-3 mt-7 flex gap-2 ${theme === 'light' ? 'text-gray-100' : 'text-gray-500'}  flex-col`}>
-                        <Link href={'/workspace'} className={`${menuOption === 3 ? 'bg-black text-white' : 'hover:bg-gray-600'} w-full transition-all duration-300  hover:text-white p-2 cursor-pointer pl-4 rounded-lg `} onClick={() => { setMenuOption(3); setSettings(false) }}><div >Workspace</div></Link>
-                        <div className='border border-gray-400 w-full'></div>
+                        
 
                             <div className={`${menuOption === 1 ? 'bg-black text-white' : 'hover:bg-gray-600'} w-full transition-all duration-300  hover:text-white p-2 cursor-pointer pl-4 rounded-lg `} onClick={() => { setMenuOption(1); setSettings(false) }}>
                                 Links
@@ -224,10 +223,13 @@ const SpaceLink = () => {
                             <div className={`${menuOption === 2 ? 'bg-black text-white' : 'hover:bg-gray-600'} w-full transition-all duration-300 cursor-pointer hover:text-white p-2 pl-4 rounded-lg`} onClick={() => { setMenuOption(2); setSettings(false) }}>
                                 Templates
                             </div>
+                        <div className='border border-gray-400 w-full'></div>
+                            <Link href={'/workspace'} className={`${menuOption === 3 ? 'bg-black text-white' : 'hover:bg-gray-600'} w-full transition-all duration-300  hover:text-white p-2 cursor-pointer pl-4 rounded-lg `} onClick={() => { setMenuOption(3); setSettings(false) }}><div >Workspace</div></Link>
                             <div className='border border-gray-400 w-full'></div>
                             <Link href={'/'} className={`${menuOption === 4 ? 'bg-black text-white' : 'hover:bg-gray-600'} w-full transition-all duration-300  hover:text-white p-2 cursor-pointer pl-4 rounded-lg `} onClick={() => { setMenuOption(4); setSettings(false) }}><div >Home</div></Link>
                         <div className='border border-gray-400 w-full'></div>
-
+                        <div className={`${menuOption === 5 ? 'bg-black text-white' : 'hover:bg-gray-600'} w-full transition-all duration-300  hover:text-white p-2 cursor-pointer pl-4 rounded-lg `} onClick={() => {  setSettings(false),setShowProfile(!showProfile) }}>Edit Profile</div>
+                        <div className='border border-gray-400 w-full'></div>
 
                         </div>
 
@@ -251,6 +253,8 @@ const SpaceLink = () => {
                         <Link href={'/workspace'}><div className='pl-6 py-1' >Workspace</div></Link>
                         <div className='border w-full '></div>
                         <Link href={'/'}><div className='pl-6 py-1' >Home</div></Link>
+                        <div className='border w-full '></div>
+                        <div className='pl-6 py-1' onClick={()=>{setShowProfile(!showProfile),setMenuOpen(!menuOpen)}}>Edit Profile</div>
                         <div className='border w-full '></div>
                     </div>
                     <div >
