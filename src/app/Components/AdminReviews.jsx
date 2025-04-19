@@ -20,7 +20,6 @@ export default function AdminReviews() {
         const res = await fetch("https://lyncnest-a5aq.onrender.com/feedback/get/getfeedback");
         const data = await res.json();
         setFeedbacks(data);
-        console.log(data)
       } catch (err) {
         console.error("Error fetching feedback:", err);
       } finally {
