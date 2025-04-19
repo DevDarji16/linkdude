@@ -55,7 +55,7 @@ export default function RateUsPage() {
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ email: email ,content:message})
+                    body: JSON.stringify({ email: email ,content:message,stars:rating})
                 })
                 .then(response => response.json())
                 .then(data => {
