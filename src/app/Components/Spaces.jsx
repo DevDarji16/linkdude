@@ -32,7 +32,7 @@ const Spaces = (props) => {
                 <div className='border w-full'></div>
                 <div className='text-center bg-red-400 rounded-lg p-1 mt-1 px-2 cursor-pointer hover:bg-red-500 flex items-center gap-1' onClick={() => { props.setSpaceDeleteClick(!props.spaceDeleteClick); props.setSpaceDeleteName(space.name); setSpaceChange(false) }}><RiDeleteBin5Line /> Delete</div>
               </div>
-              <Link href={`/space/${props.userData.username}/${space.name}`}> <div className='font-semibold py-12 bottom-4 flex text-xl items-center'>{space.name} </div>
+              <Link href={`/space/${props.userData.username}/${space.name}`}> <div className='font-semibold py-14 px-4.5 bottom-4 rounded-xl flex text-xl items-center'>{space.name} </div>
               </Link>
             </div>
           })}

@@ -10,6 +10,7 @@ import Templates from './Templates';
 import Settings from './Settings';
 import { useContext } from "react";
 import { ThemeContext } from "@/context/ThemeContext";
+import Toast from './Toast';
 
 import { MdLightMode, MdOutlineDarkMode } from "react-icons/md";
 import LoadingScreen from './Loading';
@@ -32,7 +33,13 @@ const Workspace = () => {
     const [renameSpace, setRenameSpace] = useState('')
     const [renameNewSpace, setRenameNewSpace] = useState('')
     const [renameMenu, setRenameMenu] = useState(false)
-
+    const [loadingMenu,setLoadingMenu]=useState({
+        addSpace:false,
+        deleteSpace:false,
+        renameSpace:false,
+      })
+    const [toastMessage,setToastMessage]=useState('')
+    const [showToast,setShowToast]=useState(false)
 
     useEffect(() => {
         fetch('https://lyncnest-a5aq.onrender.com/auth/currentUser', { credentials: 'include' })
@@ -57,6 +64,7 @@ const Workspace = () => {
 
 
     const handleAddSpace = () => {
+        setLoadingMenu({...loadingMenu,addSpace:true})
         if (spaceName.length > 0) {
             fetch('https://lyncnest-a5aq.onrender.com/space/createspace',
                 {
@@ -70,14 +78,24 @@ const Workspace = () => {
                 })
                 .then(response => response.json())
                 .then(data => {
-                    setSpaceClick(false)
+                    setToastMessage('Space added successfully!')
+                    setShowToast(true)
+                    
                     setSpaceName('')
-                    setSpaceadded(prev => prev + 1)
+                    setTimeout(()=>{
+                        setSpaceadded(prev => prev + 1)
+                        setSpaceClick(false)
+                        setShowToast(false)
+                        setLoadingMenu({...loadingMenu,addSpace:false})
+                
+                      },2000)
                 })
         }
         setSpaceClick(false)
     }
     const handleDeleteSpace = () => {
+        setLoadingMenu({...loadingMenu,deleteSpace:true})
+
         fetch('https://lyncnest-a5aq.onrender.com/space/removespace', {
             method: 'POST',
             cache: 'no-cache',
@@ -89,11 +107,20 @@ const Workspace = () => {
         })
             .then(response => response.json())
             .then(data => {
-                setSpaceadded(prev => prev + 1)
-                setSpaceDeleteClick(false)
+                setToastMessage('Space deleted successfully!')
+                setShowToast(true)
+                setTimeout(()=>{
+                    setSpaceadded(prev => prev + 1)
+                    setShowToast(false)
+                    setSpaceDeleteClick(false)
+                    setLoadingMenu({...loadingMenu,deleteSpace:false})
+            
+                    },2000)
             })
     }
     const handleRenameSpace = () => {
+        setLoadingMenu({...loadingMenu,renameSpace:true})
+
         fetch('https://lyncnest-a5aq.onrender.com/space/updatespace', {
             method: 'POST',
             cache: 'no-cache',
@@ -105,13 +132,22 @@ const Workspace = () => {
         })
             .then(response => response.json())
             .then(data => {
-                setSpaceadded(prev => prev + 1)
-                setRenameMenu(false)
+                setToastMessage('Space renamed successfully!')
+                    setShowToast(true)
+                    setTimeout(()=>{
+                    setSpaceadded(prev => prev + 1)
+                    setRenameMenu(false)
+                    setShowToast(false)
+                    setLoadingMenu({...loadingMenu,renameSpace:false})
+            
+                    },2000)
             })
     }
     
     return (
         <div onClick={() => setSettings(false)} className={`${theme==='dark'?'bg-[#F3F3F1] text-black':'bg-[#181b1e] text-white'} relative h-screen  overflow-x-hidden`}>
+            <Toast message={toastMessage} showToast={showToast} close={()=>setShowToast(false)}/>
+
             <AdvancedLoadingScreen/>
             <div className='absolute top-4 right-6 sm:top-11 sm:right-20 cursor-pointer' onClick={toggleTheme}>{theme==='dark'?<MdOutlineDarkMode size={27}/>:<MdLightMode size={27}/>}</div>
             {/* Add space menu */}
@@ -122,7 +158,7 @@ const Workspace = () => {
                         <input type="text" value={spaceName} onChange={e => (setSpaceName(e.target.value))} placeholder='Space name' className={` ${theme==='dark'?'text-gray-800':'text-white'} p-2 border rounded-lg w-full `} />
                         <div className='text-[11px] mt-2 text-center'>Note: Every space you make should have unique name.</div>
                     </div>
-                    <button onClick={handleAddSpace} className='w-full bg-sky-400 font-bold mb-2 text-white hover:bg-sky-500 p-2 rounded'>Add Space</button>
+                    <button onClick={handleAddSpace} className={`${loadingMenu.addSpace?'animate-pulse':''} w-full bg-sky-400 font-bold mb-2 text-white hover:bg-sky-500 p-2 rounded`}>{loadingMenu.addSpace?'Adding...':'Add Space'}</button>
 
                 </div>
             </div>
@@ -136,7 +172,7 @@ const Workspace = () => {
                         <div className='flex mt-2 gap-1'>
 
                             <button className={`${theme==='dark'?'bg-gray-200 hover:bg-gray-300':'bg-gray-700 hover:bg-gray-600  text-white'} w-full cursor-pointer  rounded-lg`} onClick={() => setSpaceDeleteClick(false)}>No</button>
-                            <button className='bg-red-500 p-2 rounded-lg hover:bg-red-600 w-full cursor-pointer' onClick={handleDeleteSpace}>Delete</button>
+                            <button className={`${loadingMenu.deleteSpace?'animate-pulse':''} bg-red-500 p-2 rounded-lg hover:bg-red-600 w-full cursor-pointer`} onClick={handleDeleteSpace}>{loadingMenu.deleteSpace?'Deleting...':'Delete Space'}</button>
                         </div>
                     </div>
 
@@ -152,7 +188,7 @@ const Workspace = () => {
                         <input type="text" value={renameNewSpace} onChange={e => (setRenameNewSpace(e.target.value))} placeholder='Space name' className='p-2 border rounded-lg w-full ' />
                         <div className='text-[11px] mt-2 text-center'>Note: Every space you make should have unique name</div>
                     </div>
-                    <button onClick={handleRenameSpace} className='w-full bg-sky-400 font-bold mb-2 hover:bg-sky-500 p-2 rounded text-white'>Rename Space</button>
+                    <button onClick={handleRenameSpace} className={`${loadingMenu.renameSpace?'animate-pulse':''} w-full bg-sky-400 font-bold mb-2 hover:bg-sky-500 p-2 rounded text-white`}>{loadingMenu.renameSpace?'Renaming...':'Rename Space'}</button>
 
                 </div>
             </div>
@@ -172,10 +208,7 @@ const Workspace = () => {
                                 Spaces
                             </div>
                             <div className='border border-gray-400 w-full'></div>
-                            {/* <div className={`${menuOption === 2 ? 'bg-black text-white' : 'hover:bg-gray-600'} w-full transition-all duration-300 cursor-pointer hover:text-white p-2 pl-4 rounded-lg`} onClick={() => { setMenuOption(2); setSettings(false) }}>
-                                Templates
-                            </div>
-                            <div className='border border-gray-400 w-full'></div> */}
+                            
 
                             <div className={`${menuOption === 3 ? 'bg-black text-white' : 'hover:bg-gray-600'} w-full transition-all duration-300 hover:text-white  cursor-pointer p-2 pl-4 rounded-lg`} onClick={() => { setMenuOption(3); }}>
                                 Web Templates
