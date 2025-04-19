@@ -81,8 +81,8 @@ const Workspace = () => {
                     setToastMessage('Space added successfully!')
                     setShowToast(true)
                     
-                    setSpaceName('')
                     setTimeout(()=>{
+                        setSpaceName('')
                         setSpaceadded(prev => prev + 1)
                         setSpaceClick(false)
                         setShowToast(false)
@@ -91,7 +91,6 @@ const Workspace = () => {
                       },2000)
                 })
         }
-        setSpaceClick(false)
     }
     const handleDeleteSpace = () => {
         setLoadingMenu({...loadingMenu,deleteSpace:true})
@@ -150,35 +149,35 @@ const Workspace = () => {
 
             <AdvancedLoadingScreen/>
             <div className='absolute top-4 right-6 sm:top-11 sm:right-20 cursor-pointer' onClick={toggleTheme}>{theme==='dark'?<MdOutlineDarkMode size={27}/>:<MdLightMode size={27}/>}</div>
-            {/* Add space menu */}
-            <div onClick={() => setSpaceClick(false)} className={`${spaceClick ? 'opacity-100' : 'opacity-0 pointer-events-none'}  transition-all duration-300 ease-in-out fixed inset-0 flex justify-center items-center mx-2  z-10  backdrop-blur-[3px]`}>
-                <div onClick={(e) => e.stopPropagation()} className={`${theme==='dark'?'bg-[#F3F3F1] text-black':'bg-[#0c0e0f] text-white'} shadow-xl max-w-[300px]  px-2 rounded-xl w-full`}>
-                    <div className='flex items-center mt-4  relative'> <div className='text-center w-full  text-[17px] font-bold'>Add New Space</div><IoMdClose onClick={() => setSpaceClick(false)} className='cursor-pointer hover:bg-gray-100 m-3 mt-4 rounded-lg absolute right-0' size={25} /></div>
-                    <div className='p-2 mt-4 w-full'>
-                        <input type="text" value={spaceName} onChange={e => (setSpaceName(e.target.value.replace(/\s+/g, '')))} placeholder='Space name' className={` ${theme==='dark'?'text-gray-800':'text-white'} p-2 border rounded-lg w-full `} />
-                        <div className='text-[11px] mt-2 text-center'>Note: Every space you make should have unique name.</div>
-                    </div>
-                    <button onClick={handleAddSpace} className={`${loadingMenu.addSpace?'animate-pulse':''} w-full bg-sky-400 font-bold mb-2 text-white hover:bg-sky-500 p-2 rounded`}>{loadingMenu.addSpace?'Adding...':'Add Space'}</button>
-
-                </div>
-            </div>
-
-            {/* Delete space menu */}
-            <div onClick={() => setSpaceDeleteClick(false)} className={`${spaceDeleteClick ? 'opacity-100' : 'opacity-0 pointer-events-none'} transition-all duration-300 ease-in-out fixed inset-0 flex justify-center items-center mx-2  z-10  backdrop-blur-[3px]`}>
-                <div onClick={(e) => e.stopPropagation()} className={`${theme==='dark'?'bg-[#F3F3F1] text-black':'bg-[#0c0e0f] text-white'} shadow-xl max-w-[300px]  px-2 rounded-xl w-full`}>
-                    <div className='flex items-center mt-4  relative'> <div className='text-center w-full  text-[17px] font-bold'>Delete Space</div><IoMdClose onClick={() => setSpaceDeleteClick(false)} className='cursor-pointer hover:bg-gray-100 m-3 mt-4 rounded-lg absolute right-0' size={25} /></div>
-                    <div className='p-2  w-full'>
-                        <div className='mt-2 text-center'>Are you sure you want to delete these space?</div>
-                        <div className='flex mt-2 gap-1'>
-
-                            <button className={`${theme==='dark'?'bg-gray-200 hover:bg-gray-300':'bg-gray-700 hover:bg-gray-600  text-white'} w-full cursor-pointer  rounded-lg`} onClick={() => setSpaceDeleteClick(false)}>No</button>
-                            <button className={`${loadingMenu.deleteSpace?'animate-pulse':''} bg-red-500 p-2 rounded-lg hover:bg-red-600 w-full cursor-pointer`} onClick={handleDeleteSpace}>{loadingMenu.deleteSpace?'Deleting...':'Delete Space'}</button>
+                {/* Add space menu */}
+                <div onClick={() => setSpaceClick(false)} className={`${spaceClick ? 'opacity-100' : 'opacity-0 pointer-events-none'}  transition-all duration-300 ease-in-out fixed inset-0 flex justify-center items-center mx-2  z-10  backdrop-blur-[3px]`}>
+                    <div onClick={(e) => e.stopPropagation()} className={`${theme==='dark'?'bg-[#F3F3F1] text-black':'bg-[#0c0e0f] text-white'} shadow-xl max-w-[300px]  px-2 rounded-xl w-full`}>
+                        <div className='flex items-center mt-4  relative'> <div className='text-center w-full  text-[17px] font-bold'>Add New Space</div><IoMdClose onClick={() => setSpaceClick(false)} className='cursor-pointer hover:bg-gray-100 m-3 mt-4 rounded-lg absolute right-0' size={25} /></div>
+                        <div className='p-2 mt-4 w-full'>
+                            <input type="text" value={spaceName} onChange={e => (setSpaceName(e.target.value.replace(/\s+/g, '')))} placeholder='Space name' className={` ${theme==='dark'?'text-gray-800':'text-white'} p-2 border rounded-lg w-full `} />
+                            <div className='text-[11px] mt-2 text-center'>Note: Every space you make should have unique name.</div>
                         </div>
+                        <button onClick={handleAddSpace} className={`${loadingMenu.addSpace?'animate-pulse':''} w-full bg-sky-400 font-bold mb-2 text-white hover:bg-sky-500 p-2 rounded`}>{loadingMenu.addSpace?'Adding...':'Add Space'}</button>
+
                     </div>
-
-
                 </div>
-            </div>
+
+                {/* Delete space menu */}
+                <div onClick={() => setSpaceDeleteClick(false)} className={`${spaceDeleteClick ? 'opacity-100' : 'opacity-0 pointer-events-none'} transition-all duration-300 ease-in-out fixed inset-0 flex justify-center items-center mx-2  z-10  backdrop-blur-[3px]`}>
+                    <div onClick={(e) => e.stopPropagation()} className={`${theme==='dark'?'bg-[#F3F3F1] text-black':'bg-[#0c0e0f] text-white'} shadow-xl max-w-[300px]  px-2 rounded-xl w-full`}>
+                        <div className='flex items-center mt-4  relative'> <div className='text-center w-full  text-[17px] font-bold'>Delete Space</div><IoMdClose onClick={() => setSpaceDeleteClick(false)} className='cursor-pointer hover:bg-gray-100 m-3 mt-4 rounded-lg absolute right-0' size={25} /></div>
+                        <div className='p-2  w-full'>
+                            <div className='mt-2 text-center'>Are you sure you want to delete these space?</div>
+                            <div className='flex mt-2 gap-1'>
+
+                                <button className={`${theme==='dark'?'bg-gray-200 hover:bg-gray-300':'bg-gray-700 hover:bg-gray-600  text-white'} w-full cursor-pointer  rounded-lg`} onClick={() => setSpaceDeleteClick(false)}>No</button>
+                                <button className={`${loadingMenu.deleteSpace?'animate-pulse':''} bg-red-500 p-2 rounded-lg hover:bg-red-600 w-full cursor-pointer`} onClick={handleDeleteSpace}>{loadingMenu.deleteSpace?'Deleting...':'Delete Space'}</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
 
             {/* Rename space Menu  */}
             <div onClick={() => setRenameMenu(false)} className={`${renameMenu ? 'opacity-100' : 'opacity-0 pointer-events-none'} transition-all duration-300 ease-in-out fixed inset-0 flex justify-center items-center mx-2  z-10  backdrop-blur-[3px]`}>
