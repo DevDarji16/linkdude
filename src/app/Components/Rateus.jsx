@@ -26,7 +26,6 @@ export default function RateUsPage() {
     const handleSubmit = () => {
         let valid = true;
         const newErrors = { email: "", rating: "" };
-
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (!emailRegex.test(email)) {
@@ -55,7 +54,7 @@ export default function RateUsPage() {
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ email: email ,content:message,stars:rating})
+                    body: JSON.stringify({ email: email ,content:`${categories[currectCategory]}: ${message}`,stars:rating})
                 })
                 .then(response => response.json())
                 .then(data => {
@@ -72,6 +71,8 @@ export default function RateUsPage() {
                 })
         }
     };
+    const categories=['Features Request','Bug Report','User Experience','Design Feedback','Others']
+    const [currectCategory,setCurrentCategory]=useState(0)
 
     return (
         <div className={`${isDark ? "bg-black text-white" : "bg-white text-black"} min-h-screen`}>
@@ -118,7 +119,6 @@ export default function RateUsPage() {
                         <p className="text-sm text-red-500 text-center -mt-2">{errors.rating}</p>
                     )}
 
-                    {/* Email */}
                     <div className="space-y-1">
                         <Input
                             type="email"
@@ -134,8 +134,12 @@ export default function RateUsPage() {
                             <p className="text-sm text-red-500">{errors.email}</p>
                         )}
                     </div>
-
-                    {/* Feedback */}
+                    
+                    <div className="flex flex-wrap gap-4">
+                        {categories.map((category,index)=>{
+                           return <div key={index} onClick={()=>setCurrentCategory(index)} className={`${currectCategory===index?'bg-yellow-500 text-gray-900':'text-white'} border border-gray-300 p-1.5  rounded-full cursor-pointer hover:bg-yellow-500 hover:text-gray-900`}>{category}</div>
+                        })}
+                    </div>
                     <div className="space-y-1">
                         <Textarea
                             placeholder="Your feedback or suggestions..."

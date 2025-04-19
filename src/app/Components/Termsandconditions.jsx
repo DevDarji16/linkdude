@@ -21,7 +21,7 @@ const Termsandconditions = () => {
       </div>
       
       <div className="selection:text-green-500  w-full max-w-4xl px-6 sm:px-12 lg:px-20 mt-10 text-lg overflow-hidden">
-        <p><strong>Last Updated:</strong> 3 April 2025</p>
+        <p><strong>Last Updated:</strong> 18 April 2025</p>
 
         <p>Welcome to Linkdude! By accessing or using our platform, you agree to comply with and be bound by these Terms and Conditions. If you do not agree with any part of these terms, please do not use our services.</p>
 

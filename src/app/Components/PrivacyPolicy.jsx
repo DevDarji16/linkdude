@@ -20,7 +20,7 @@ const PrivacyPolicy = () => {
         </div>
 
         <div className="selection:text-green-500 w-full max-w-4xl px-6 sm:px-12 lg:px-20 mt-10 text-lg overflow-hidden">
-          <p><strong>Last Updated:</strong> 3 April 2025</p>
+          <p><strong>Last Updated:</strong> 18 April 2025</p>
 
           <p>
             This Privacy Policy describes how Linkdude collects, uses, and protects your information when you use our platform. By accessing or using Linkdude, you consent to the practices outlined below.
