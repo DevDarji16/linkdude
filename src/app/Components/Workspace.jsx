@@ -155,7 +155,7 @@ const Workspace = () => {
                 <div onClick={(e) => e.stopPropagation()} className={`${theme==='dark'?'bg-[#F3F3F1] text-black':'bg-[#0c0e0f] text-white'} shadow-xl max-w-[300px]  px-2 rounded-xl w-full`}>
                     <div className='flex items-center mt-4  relative'> <div className='text-center w-full  text-[17px] font-bold'>Add New Space</div><IoMdClose onClick={() => setSpaceClick(false)} className='cursor-pointer hover:bg-gray-100 m-3 mt-4 rounded-lg absolute right-0' size={25} /></div>
                     <div className='p-2 mt-4 w-full'>
-                        <input type="text" value={spaceName} onChange={e => (setSpaceName(e.target.value))} placeholder='Space name' className={` ${theme==='dark'?'text-gray-800':'text-white'} p-2 border rounded-lg w-full `} />
+                        <input type="text" value={spaceName} onChange={e => (setSpaceName(e.target.value.replace(/\s+/g, '')))} placeholder='Space name' className={` ${theme==='dark'?'text-gray-800':'text-white'} p-2 border rounded-lg w-full `} />
                         <div className='text-[11px] mt-2 text-center'>Note: Every space you make should have unique name.</div>
                     </div>
                     <button onClick={handleAddSpace} className={`${loadingMenu.addSpace?'animate-pulse':''} w-full bg-sky-400 font-bold mb-2 text-white hover:bg-sky-500 p-2 rounded`}>{loadingMenu.addSpace?'Adding...':'Add Space'}</button>
