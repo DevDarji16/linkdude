@@ -70,7 +70,7 @@ const PrivacyPolicy = () => {
 
           <h2 className="text-2xl font-semibold mt-6">Contact Us</h2>
           <p>
-            If you have any questions or concerns about this Privacy Policy, feel free to <Link href="/contactus" className="text-blue-400 underline">Contact us</Link>.
+            If you have any questions or concerns about this Privacy Policy, feel free to <Link href="/contact-us" className="text-blue-400 underline">Contact us</Link>.
           </p>
         </div>
       </div>

@@ -58,7 +58,7 @@ const Termsandconditions = () => {
         <p>We may update these Terms and Conditions from time to time. Continued use of Linkdude after changes implies acceptance of the updated terms.</p>
 
         <h2 className="text-2xl font-semibold mt-6">    Contact Us</h2>
-        <p>If you have any questions about these Terms and Conditions, please contact us at <Link href="/contactus" className='text-blue-400 underline'>Contact us</Link>.</p>
+        <p>If you have any questions about these Terms and Conditions, please contact us at <Link href="/contact-us" className='text-blue-400 underline'>Contact us</Link>.</p>
       </div>
     </div>
       <Footer/>
