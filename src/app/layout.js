@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 
 export const metadata = {
-  title: "Linkdude",
+  title: "LinkDude – Your All-in-One Link Hub",
   description: "Create and manage beautiful link-in-bio pages with Linkdude.",
   openGraph: {
     title: "Linkdude",
