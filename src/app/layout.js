@@ -16,17 +16,15 @@ const geistMono = Geist_Mono({
 
 
 export const metadata = {
-  title: "LinkDude – Your All-in-One Link Hub",
-  description: "Create and manage beautiful link-in-bio pages with Linkdude.",
+  title: "LinkDude – The easiest way to manage and share all your important links in one place",
+  description: "Customizable Spaces. Create multiple spaces, each with a unique URL. Manage and share all your important links easily with LinkDude.",
   openGraph: {
-    title: "Linkdude",
-    description: "Create and manage beautiful link-in-bio pages with Linkdude.",
+    title: "LinkDude",
+    description: "Customizable Spaces. Create multiple spaces, each with a unique URL. Manage and share all your important links easily with LinkDude.",
     url: "https://linkdude.vercel.app",
-    siteName: "Linkdude",
-  
+    siteName: "LinkDude",
     type: "website",
   },
-  
   other: {
     "google-site-verification": "JfU8igH1zHErnM1AZvwKvXb9RdduaneLT38zZiSLO9o",
   },
